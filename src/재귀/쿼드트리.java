@@ -31,10 +31,11 @@ public class 쿼드트리 {
     private Count count(int offsetX, int offsetY, int size, int[][] arr){
         //종료 조건 -> 정사각형 영역 안의 모든 원소가 같은 값을 가질 때
         // 여기서 처음에 4개의 영역을 나누어 탐색하려고 했다 하지만 전체 정사각형을 탐색하고 나눠야할 일이 있으면 그때 나누는 것이다. -> 부분 문제를 잘 설정하자
+        int dividedSize = size / 2;
         for(int x = offsetX; x < offsetX+size; x++){
             for(int y = offsetY; y < offsetY+size; y++){
-                if(arr[y][x] != arr[offsetX][offsetY]){ // 원소가 섞여있는 경우
-                    int dividedSize = size / 2;
+                if(arr[y][x] != arr[offsetY][offsetX]){ // 원소가 섞여있는 경우
+
                     return count(offsetX, offsetY, dividedSize, arr)
                             .add(count(offsetX+dividedSize, offsetY, dividedSize, arr))
                             .add(count(offsetX, offsetY+dividedSize, dividedSize, arr))
