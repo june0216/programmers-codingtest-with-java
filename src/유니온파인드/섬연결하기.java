@@ -20,11 +20,9 @@ public class 섬연결하기 {
             return this.weight - node.weight;
         }
     }
-    public static int find(int edge) {
-        if (parent[edge] != edge) {
-            parent[edge] = find(parent[edge]); // 경로 압축
-        }
-        return parent[edge];
+    public static int find(int edge){
+        if(parent[edge] == edge) return edge;
+        return find(parent[edge]);
     }
 
     public static boolean merge(int from, int to) {
