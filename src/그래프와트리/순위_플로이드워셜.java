@@ -2,9 +2,9 @@ package src.그래프와트리;
 
 /**
  * 정보가 N-1 개가 있으면 순위를 알 수 있음
- * A-> B 이기고 B-> C 이기면 A -> C를 이겼다고 할 수 있음
+ * A-> B 이기고 B-> C 이기면 A -> C를 이겼다고 할 수 있위
  */
-public class 순위_플로이셜 {
+public class 순위_플로이드워셜 {
     class Solution {
 
         public int solution(int n, int[][] results) {
